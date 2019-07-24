@@ -1,33 +1,24 @@
-#include <QCoreApplication>
-
 #include <iostream>
 #include <string>
 
 bool isSandwichWithIceCream (std :: string s)
 {
-//    bool sandwich (false);
-//    bool iceCream (false);
-
     int lowerSandwichSize(0);
     int upperSandwichSize(0);
     int iceCreamSize(0);
 
-    char lowerSandwich(s[0]);
-    char upperSandwich(s[s.size() - 1]);
-    char iceCream (s[s.size() / 2]);
-
-    if (lowerSandwich != upperSandwich || lowerSandwich == iceCream || upperSandwich == iceCream )
+    if (s[0] != s[s.size() - 1] || s[0] == s[s.size() / 2] || s[s.size() - 1] == s[s.size() / 2] )
     {
         return false;
     }
 
     for (int i(0); i < s.size(); i++)
     {
-        if ( s[i] == lowerSandwich )
+        if ( s[i] == s[0] )
         {
             lowerSandwichSize++;
         }
-        if( s[i] != lowerSandwich)
+        if( s[i] != s[0])
         {
             break;
         }
@@ -35,18 +26,18 @@ bool isSandwichWithIceCream (std :: string s)
 
     for (int i(s.size() - 1) ; i != 0; i--)
     {
-        if ( s[i] == lowerSandwich )
+        if ( s[i] == s[0] )
         {
             upperSandwichSize++;
         }
-        if( s[i] != upperSandwich)
+        if( s[i] != s[0])
         {
             break;
         }
     }
 
 
-    if (upperSandwichSize == lowerSandwichSize)
+    if (s[s.size() - 1] == s[0])
     {
         return true;
     }
