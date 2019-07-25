@@ -1,8 +1,35 @@
-#include <QCoreApplication>
+#include <iostream>
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
+    int lMonth;
+    std::cin >> lMonth;
 
-    return a.exec();
+            if (lMonth == 1 || lMonth == 2 || lMonth == 12)
+            {
+               std::cout << "Winter";
+            }
+
+            else if (lMonth >= 3 && lMonth <= 5)
+            {
+               std::cout << "Spring";
+            }
+
+            else if (lMonth >= 6 && lMonth <= 8)
+            {
+                std::cout << "Summer";
+            }
+
+            else if (lMonth >= 9 && lMonth <= 11)
+            {
+               std::cout << "Autumn";
+            }
+
+            else
+            {
+                std::cout << "Your input is not correct !";
+            }
+
+            std::cout<< '\n';
+    return 0;
 }
