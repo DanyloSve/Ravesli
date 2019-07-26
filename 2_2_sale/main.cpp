@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
         std::cout << "Price with sale is :" << price * 97 / 100 <<' '<<"gryvnias\n";
     }
 
-    else if (  price > 1000)
+    else if (  price >= 1000)
     {
         std::cout << "You have got 5% sale\n";
         std::cout << "Price with sale is :" << price * 95 / 100 <<' '<<"gryvnias\n";
