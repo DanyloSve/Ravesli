@@ -1,9 +1,14 @@
 #include <iostream>
+#include <fstream>
+
+
 
 int main(int argc, char *argv[])
 {
     std::string s;
     std::getline(std::cin, s);
+    std::ofstream fout;
+    fout.open("morze.txt");
 
     for (int i(0); i < s.length(); i++)
     {
@@ -11,143 +16,144 @@ int main(int argc, char *argv[])
         {
         case 'a':
         case 'A':
-            std::cout<<"._";
+            fout<<"._";
             break;
 
         case 'b':
         case 'B':
-            std::cout<<"_...";
+            fout<<"_...";
             break;
 
 
         case 'c':
         case 'C':
-            std::cout<<"_._.";
+            fout<<"_._.";
             break;
 
 
         case 'd':
         case 'D':
-            std::cout<<"_..";
+            fout<<"_..";
             break;
 
 
         case 'e':
         case 'E':
-            std::cout<<".";
+            fout<<".";
             break;
 
         case 'f':
         case 'F':
-            std::cout<<".._.";
+            fout<<".._.";
             break;
 
         case 'g':
         case 'G':
-            std::cout<<"__.";
+            fout<<"__.";
             break;
 
         case 'h':
         case 'H':
-            std::cout<<"....";
+            fout<<"....";
             break;
 
         case 'i':
         case 'I':
-            std::cout<<"..";
+            fout<<"..";
             break;
 
         case 'j':
         case 'J':
-            std::cout<<".___";
+            fout<<".___";
             break;
 
         case 'k':
         case 'K':
-            std::cout<<"_._";
+            fout<<"_._";
             break;
 
         case 'l':
         case 'L':
-            std::cout<<"._..";
+            fout<<"._..";
             break;
 
         case 'm':
         case 'M':
-            std::cout<<"__";
+            fout<<"__";
             break;
 
         case 'n':
         case 'N':
-            std::cout<<"_.";
+            fout<<"_.";
             break;
 
         case 'o':
         case 'O':
-            std::cout<<"___";
+            fout <<"___";
             break;
 
         case 'p':
         case 'P':
-            std::cout<<".__.";
+            fout <<".__.";
             break;
 
         case 'q':
         case 'Q':
-            std::cout<<"__._";
+            fout <<"__._";
             break;
 
         case 'r':
         case 'R':
-            std::cout<<"._.";
+            fout <<"._.";
             break;
 
         case 's':
         case 'S':
-            std::cout<<"...";
+            fout <<"...";
             break;
 
         case 't':
         case 'T':
-            std::cout<<"_";
+            fout <<"_";
             break;
 
         case 'u':
         case 'U':
-            std::cout<<"";
+            fout <<"";
             break;
 
         case 'v':
         case 'V':
-            std::cout<<".._";
+            fout <<".._";
             break;
 
         case 'w':
         case 'W':
-            std::cout<<"..._";
+            fout <<"..._";
             break;
 
         case 'x':
         case 'X':
-            std::cout<<"_.._";
+            fout<<"_.._";
             break;
 
         case 'y':
         case 'Y':
-            std::cout<<"_.__";
+            fout <<"_.__";
             break;
 
         case 'z':
         case 'Z':
-            std::cout<<"__..";
+            fout <<"__..";
             break;
 
         default:
-            std::cout << s[i];
+            fout << s[i];
         }
-        std::cout << ' ';
+        fout << ' ';
 
     }
-    std::cout << '\n';
+    fout << '\n';
+    fout.close();
     return 0;
 }
