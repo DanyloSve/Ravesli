@@ -152,15 +152,26 @@ public:
     }
 };
 
+
+struct Show
+{
+    void toShow()
+    {
+        SumOfArrays sum;
+        sum.sumOfArrays();
+        for (int i(0); i < sum.getmNumber(); i++)
+        {
+            std::cout << sum.pSum()[i];
+        }
+        std::cout << '\n';
+
+    }
+};
+
+
 int main()
 {
-    SumOfArrays sum;
-    sum.sumOfArrays();
-
-    for (int i(0); i < sum.getmNumber(); i++)
-    {
-        std::cout << sum.pSum()[i];
-    }
-    std::cout << '\n';
+    Show show;
+    show.toShow();
     return 0;
 }
