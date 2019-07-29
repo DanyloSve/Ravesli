@@ -7,5 +7,6 @@ int main()
     std::cin >> minutes;
     std::cout << "Hours :"<< ' ' << minutes / 60 << '\n';
     std::cout << "Minutes :"<< ' ' << minutes % 60 << '\n';
+
     return 0;
 }
