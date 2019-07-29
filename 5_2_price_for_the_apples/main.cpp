@@ -12,5 +12,6 @@ int main()
     {
         std::cout << i << ' ' << "g" << " = " << price / 1000 * i <<'\n';
     }
+
     return 0;
 }
