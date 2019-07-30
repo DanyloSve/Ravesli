@@ -1,32 +1,20 @@
 #include <iostream>
 #include <chrono>
+#include <thread>
 
-class Timer
-{
-private:
-    using clock_t = std::chrono::high_resolution_clock;
-    using second_t = std::chrono::duration < double, std::ratio<1> >;
 
-    std::chrono::time_point <clock_t> m_beg;
-
-public:
-    Timer() : m_beg(clock_t::now())
-    {
-
-    }
-
-    void reset()
-    {
-        m_beg = clock_t::now();
-    }
-
-    double elapsed() const
-    {
-        return std::chrono::duration_cast <second_t> (clock_t::now() - m_beg).count();
-    }
-};
 int main()
 {
-    std::cout << "";
-    return 0;
+   int time;
+   std::cout << "Input time in seconds:\n";
+   std::cin >> time;
+   //for (int i(0); i !-= time; i++)
+   // using namespace std::chrono_literals; // C++14
+
+   auto start = std::chrono::high_resolution_clock::now();
+   std::this_thread::sleep_for(std::chrono::seconds(time)); // C++11
+   // std::this_thread::sleep_for(2s); // C++14
+   auto end = std::chrono::high_resolution_clock::now();
+   std::chrono::duration<double, std::milli> elapsed = end-start;
+   std::cout << "Out of time!\n";
 }
