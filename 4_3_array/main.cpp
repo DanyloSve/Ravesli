@@ -24,11 +24,7 @@ public:
         char *first = new char [buffer];
         int position(0);
 
-        bool space [3];
-        int countSpace(0);
-        int i(0);
-
-        while(std::cin.get(lCharacter) && lCharacter != '\n')
+              while(std::cin.get(lCharacter) && lCharacter != '\n')
         {
            if (buffer == position)
            {

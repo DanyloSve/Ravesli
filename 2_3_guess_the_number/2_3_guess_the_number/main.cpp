@@ -1,13 +1,23 @@
 ﻿#include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <random>
+
+int rand()
+{
+    std::mt19937::result_type seed =time(0);
+    int rand = std::bind(std::uniform_int_distribution <int> (0,999), std::mt19937(seed));
+    return rand;
+
+}
+
 
 int main(int argc, char *argv[])
 {
     while (true)
     {
 
-        srand (time(0));
+        srand (static_cast<int> (time(0)));
 
         int numb = rand() % 1000;
 
