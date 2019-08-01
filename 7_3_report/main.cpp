@@ -13,10 +13,17 @@ private:
 public:
     void addId()
     {
-        std::getline(std::cin, mStudentId);
-        std::cin.ignore(300, '\n');
+        std::string name;
+        std::cout << "Input Student name:\n";
+        std::cin >> name;
+
+        std::string surname;
+        std::cout << "Input Student surname:\n";
+        std::cin >> surname;
+
         gF << "Student information : ";
-        gF << mStudentId;
+
+        gF << name <<' '<<surname;
         gF <<'\n';
 
     }
@@ -62,30 +69,33 @@ void readFile()
 {
     std::string buffer;
     std::getline (std::cin, buffer);
+
+
     if (buffer.empty())
     {
         gF << "Here are 0 students\n";
+    }
+    else
+    {
+        buffer[10];
     }
 }
 
 void userInterface()
 {
     std::string path("input_data.txt");
-    gF.open(path, std::fstream::app);
+
+    gF.open(path, std::fstream::in | std::fstream::out | std::fstream::app);
 
     if (gF.is_open())
     {
         std::cout << "File is opened successful!\n";
-
     }
     else
     {
-        std::ofstream gF;
-        gF.open(path, std::ofstream::app);
+        std::cout << "Error! File is NOT opened !\n";
     }
-
-
-   // readFile();
+    readFile();
 
 
     while (true)
