@@ -6,14 +6,7 @@ namespace myNamespace
 {
     int* calc()
     {
-        int **m = new int *[3];
-        m[0] = new int [15];
-        for (int i(1); i !=  3; i++)
-        {
-            m[i] = m[i - 1] + 5;
-        }
-
-        m = { {6, 7, 8},{7, 8, 9}, {6, 9, 10},{ 6, 9, 8},{ 7, 6, 10}};
+        int  m[5][3] = { {6, 7, 8},{7, 8, 9}, {6, 9, 10},{ 6, 9, 8},{ 7, 6, 10}};
 
         int *sum = new int [5];
 
@@ -24,10 +17,7 @@ namespace myNamespace
                 sum[i] += m[i][j];
             }
         }
-        for (int i(0);i < 5; i++)
-        {
-            std::cout << sum[i] <<' ';
-        }
+
         return sum;
     }
 
@@ -43,7 +33,6 @@ namespace myNamespace
             random -= 4;
         }
 
-        std::cout<< random;
 
     return random;
     }
@@ -69,7 +58,7 @@ namespace myNamespace
         }
 
         int cmpnumb = calc()[rand()];
-        std::cout << "Computert numb : " << cmpnumb;
+        std::cout << "Computert numb : " << cmpnumb <<'\n';
         if (sum > cmpnumb)
         {
             std::cout << "Congratulations!\n"
