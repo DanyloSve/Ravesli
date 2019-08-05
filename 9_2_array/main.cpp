@@ -116,7 +116,7 @@ namespace myNamespace
         }
     }
 
-    //інтерфейс програми(незавершений)
+    //інтерфейс програми
     void userInterface()
     {
         int i(0);
