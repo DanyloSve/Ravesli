@@ -102,26 +102,6 @@ int age()
 }
 
 
-int type()
-{
-    std::random_device rd;
-    std::mt19937 marsenne(rd());
-
-    int rand = marsenne() % 10;
-
-    if (rand >= 1 && rand <= 3)
-    {
-          if (rand == 1)
-          {
-             return rand;
-          }
-    }
-    else
-    {
-        type();
-    }
-}
-
 void usrInfce()
 {
     Formalists Olena("Olena", age());
