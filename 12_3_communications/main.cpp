@@ -8,9 +8,11 @@ class Person
 protected:
     std::string mName;
     std::string mPersonType;
+    std::string mGreeting;
     int mAge;
 
 public:
+
     std::string getPersonType()
     {
         return mPersonType;
@@ -26,22 +28,6 @@ public:
         return mName;
     }
 
-};
-
-class Formalists : public Person
-{
-private:
-    std::string mGreeting;
-
-public:
-    Formalists(std::string name, int year)
-    {
-       mName = name;
-       mAge = year;
-       std::string mGreeting = "Hello!";
-       mPersonType = "formal";
-    }
-
     std::string getGreeting()
     {
         return mGreeting;
@@ -49,38 +35,39 @@ public:
 
 };
 
-class Neoformalists : public Person
+struct Formalists : public Person
 {
-private:
-    std::string mGreeting;
+ Formalists(std::string name, int year)
+    {
+       mName = name;
+       mAge = year;
 
-public:
-    Neoformalists(std::string name, int year)
+       std::string mGreeting = "Hello!";
+       mPersonType = "formalist";
+    }
+};
+
+struct Neoformalists : public Person
+{
+ Neoformalists(std::string name, int year)
     {
         mName = name;
         mAge = year;
 
         std::string mGreeting = "Hi";
-        mPersonType = "neoformal";
-    }
-
-    std::string getGreeting()
-    {
-        return mGreeting;
+        mPersonType = "neoformalist";
     }
 
 };
 
-class Realists : public Person
+struct Realists : public Person
 {
-private:
-    std::string mGreeting;
 
-public:
     Realists(std::string name, int year)
     {
         mName = name;
         mAge = year;
+
         mPersonType = "realist";
         mGreeting = "Hello";
     }
@@ -92,11 +79,8 @@ public:
             mGreeting = "Hi";
             return mGreeting;
         }
-        else
-        {
-            mGreeting = "Hello";
-            return mGreeting;
-        }
+
+        return mGreeting;
     }
 };
 
