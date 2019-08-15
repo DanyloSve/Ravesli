@@ -18,9 +18,7 @@ int main(int argc, char *argv[])
         {
             for (int k(0); k < 10; k++)
             {
-                if ( k == ones
-                     && j == dec
-                     && i ==  hundrets)
+                if ( k == ones && j == dec && i ==  hundrets)
                 {
                     break;
                 }
