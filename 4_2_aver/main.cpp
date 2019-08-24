@@ -14,15 +14,16 @@ double aver(double *a, int n)
     return sum / n;
 }
 
-double *min(double *a, int &n)
+double *min(double *a, double *n)
 {
     double *min = a;
-    while (*a++ != '\0')
+    for (; *a != *n; a++)
     {
         if (*a < *min)
         {
             min = a;
         }
+
     }
     return min;
 }
@@ -52,9 +53,10 @@ int main()
         std::cin >> a[i];
     }
 
+
     std::cout << "Number of iteams: " << n <<'\n';
     std::cout << "Average: " << ' ' << aver(a, n) <<'\n';
-    std::cout << "Min iteam : " << *min(a, n) << '\n';
+    std::cout << "Min iteam : " << *min(a, a + n) << '\n';
     std::cout << "Max iteam : " << max(a, n) << '\n';
 
     return 0;
